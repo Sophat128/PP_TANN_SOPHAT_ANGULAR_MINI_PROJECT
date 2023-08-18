@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="gradient-form h-screen w-full flex justify-center bg-neutral-200">
+    <div class="container h-screen p-10">
+      <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+        <div class="w-full relative">
+          <div class="  block rounded-lg shadow-lg dark:bg-neutral-800">
+            <div class="grid grid-cols-3">
+              <!-- Right column container with background and description-->
+              <div
+                class="col-span-2 flex items-center justify-center rounded-b-lg  lg:rounded-l-lg lg:rounded-br-none bg-login">
+                <div class="px-4 text-white text-center md:mx-6 md:p-12">
+                  <img src="../../assets/images/login/astronaut.svg" alt="">
+                  <p class="text-2xl">
+                    Welcome MY<span class="font-bold">BOOK</span>
+                  </p>
+                  <p class="text-sm">
+                    There is no friend as loyal as a book.
+
+                  </p>
+                </div>
+              </div>
+              <!-- Left column container-->
+              <div class="px-4 md:px-0 backdrop-blur-sm bg-white/30">
+                <div class="md:mx-6 md:p-12 mt-32 ">
+                  <!--Logo-->
+                  <div class="text-center">
+                    <img class="mx-auto w-48" src="../../assets/images/login/book.svg" alt="logo" />
+                    <h4 class="mb-12 mt-1 pb-1 text-2xl font-bold">
+                      WELCOME
+                    </h4>
+                  </div>
+
+                  <form [formGroup]="bookForm" (ngSubmit)="onBookFormSubmit()">
+                    <!--Username input-->
+                    <div class="relative mb-4" data-te-input-wrapper-init>
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <img src="../../assets/images/login/mail.svg" alt=""
+                          class="w-6 h-6 text-gray-500 dark:text-gray-400">
+                      </div>
+                      <input formControlName="email" type="text" id="email-address-icon"
+                      [ngClass]="{'invalid-input': bookForm.get('email')?.invalid && (bookForm.get('email')?.touched) || bookForm.get('email')?.dirty}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="name_123@gmail.com" emailValidator>
+                        <div *ngIf="bookForm.get('email')?.invalid && bookForm.get('email')?.touched" class="validation-error">
+                          <div *ngIf="bookForm.get('email')?.errors?.['invalidEmail']">Invalid email format</div>
+                        </div>
+                    </div>
+
+                    <!--Password input-->
+                    <div class="relative mb-4" data-te-input-wrapper-init>
+
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <img src="../../assets/images/login/lock.svg" alt=""
+                          class="w-6 h-6 text-gray-500 dark:text-gray-400">
+                      </div>
+                      <input formControlName="password" type="text" id="email-address-icon"
+                        class="bg-gray-50 border border-red-300 text-gray-900 text-sm rounded-lg  block w-full pl-10 p-2.5 outline-none focus:outline-none"
+                        placeholder="name@flowbite.com" passwordValidator>
+                        <div *ngIf="bookForm.get('password')?.invalid && (bookForm.get('password')?.touched || bookForm.get('password')?.dirty)" class="validation-error">
+                          <div *ngIf="bookForm.get('password')?.errors?.['invalidPassword']">Invalid email format</div>
+                        </div>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                          <img src="../../assets/images/login/eye-off.svg" alt=""
+                            class="w-6 h-6 text-gray-500 dark:text-gray-400">
+                        </div>
+
+                    </div>
+
+
+                    <!--Submit button-->
+                    <div class="mb-12 pb-1 pt-1 text-center">
+                      <button
+                        class="mb-3 inline-block bg-loginBtn w-full rounded-2xl px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                        type="submit" data-te-ripple-init data-te-ripple-color="light">
+                        Log in
+                      </button>
+
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <!-- <img src="../../assets/images/login/books.svg" alt="" class="absolute right-0 top-10 "> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

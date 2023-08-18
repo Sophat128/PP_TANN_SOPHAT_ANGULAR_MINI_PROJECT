@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="bg-white dark:bg-gray-900  relative">
+    <div class="bg-individual_page h-96">
+      <a routerLink="/">
+        <img src="../../assets/images/icon/back_btn.svg" alt="" class="pt-5 pl-10 ">
+      </a>
+
+      <img src="../../assets/images/icon/Group 3.svg" alt="" class="absolute top-0 right-56 ">
+      <img src="../../assets/images/icon/Group 3.svg" alt="" class="absolute top-36 -left-5 ">
+
+    </div>
+
+    <section class=" mt-10 flex absolute top-32 w-full h-auto">
+
+      <div class="bg-gray-100  p-5 mx-60  my-10 w-full border border-gray-200 rounded-lg shadow">
+        <div class="ml-60">
+
+            <h1 class="text-2xl font-semibold">{{tempBook.title}}</h1>
+            <p class="font-semibold text-yellow-300 text-xl">{{tempBook.author}}</p>
+            <p class="font-semibold">{{tempBook.category}}</p>
+        </div>
+        <div class="flex justify-evenly mt-5">
+
+          <div href="#" class="absolute -top-10 left-72">
+            <img src="../../assets/images/book/{{tempBook.bookImage}}" alt="" width="200px">
+          </div>
+
+
+        </div>
+        <div class="m-24">
+          <label for="message" class="block mb-3 font-medium text-xl text-gray-900 dark:text-white">Description</label>
+          <p class="text-justify">
+            {{tempBook.description}}
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </section>
+
+</body>
+
+</html>

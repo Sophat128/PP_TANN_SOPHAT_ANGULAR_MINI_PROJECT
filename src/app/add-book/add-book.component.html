@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="bg-white dark:bg-gray-900  relative">
+    <div class="bg-individual_page h-96">
+      <a routerLink="/">
+        <img src="../../assets/images/icon/back_btn.svg" alt="" class="pt-5 pl-10 ">
+      </a>
+
+      <img src="../../assets/images/icon/Group 3.svg" alt="" class="absolute top-0 right-56 ">
+      <img src="../../assets/images/icon/Group 3.svg" alt="" class="absolute top-36 -left-5 ">
+
+    </div>
+
+    <section class=" mt-10 flex absolute top-32 w-full h-auto">
+
+      <div class="bg-gray-100  p-5 mx-60  my-10 w-full border border-gray-200 rounded-lg shadow">
+        <h1 class="text-center text-2xl font-semibold">Add New Book</h1>
+        <form [formGroup]="addBookForm" (ngSubmit)="bookFormSubmit()">
+          <div class="flex justify-evenly mt-5">
+
+            <img src="../../assets/images/book/view_book.png" alt="" width="200px" height="100px">
+
+            <div>
+
+                <div class="mb-6">
+                  <label for="base-input"
+                    class="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                  <input formControlName="title" type="text" id="base-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <div class="mb-6">
+                  <label for="base-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Author</label>
+                  <input formControlName="author" type="text" id="base-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+    
+                <div class="mb-6">
+                  <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your
+                    category</label>
+                  <select formControlName="category" id="categories"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option>Categories</option>
+                    <option>Business</option>
+                    <option>Science</option>
+                    <option>Fiction</option>
+                    <option>Philosophy</option>
+                  </select>
+    
+                </div>
+            </div>
+
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+              message</label>
+            <textarea formControlName="description" id="message" rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Leave a comment..."></textarea>
+
+          </div>
+          <button type="submit" class="py-2 px-4 bg-yellow-300 rounded-xl font-bold">Create</button>
+        </form>
+
+
+      </div>
+
+
+    </section>
+
+
+  </section>
+
+</body>
+
+</html>
